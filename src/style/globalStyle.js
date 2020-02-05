@@ -28,7 +28,7 @@ export default StyleSheet.create({
     width: '100%',
     backgroundColor:'#F8FEFD',
     alignItems:'center',
-    borderTopWidth:0,
+    // borderTopWidth:0,
   },
 
   tabBarUnderlineStyle: {

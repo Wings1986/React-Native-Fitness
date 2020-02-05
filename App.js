@@ -4,6 +4,10 @@ import {Platform, StatusBar, StyleSheet, SafeAreaView, View} from 'react-native'
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 
+// import { Font } from 'expo';
+import * as Font from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
+
 import DayScreen from './src/screens/DayScreen';
 import ExerciseScreen from './src/screens/ExerciseScreen';
 import DayCompleteScreen from './src/screens/DayCompleteScreen'
@@ -50,20 +54,41 @@ export default class App extends React.Component {
         fontLoaded: false
     };
 
-    async componentDidMount() {
-        // await Font.loadAsync({
-        //     // 'SCRATCHMYBACK': require('./assets/fonts/SCRATCHMYBACK.TTF'),
-        //     'PacificoRegular': require('./assets/fonts/Pacifico-Regular.ttf'),
-        //     'PattayaRegular': require('./assets/fonts/Pattaya-Regular.ttf'),
-        // });
-        // this.setState({fontLoaded: true});
+    // async componentDidMount() {
+
+    //   await Font.loadAsync({
+    //     // Load a font `Montserrat` from a static resource
+    //     Roboto_medium: require('./assets/fonts/Roboto_medium.ttf'),
+      
+    //     // Any string can be used as the fontFamily name. Here we use an object to provide more control
+    //     // 'Roboto_medium': {
+    //     //   uri: require('./assets/fonts/Mont.ttf'),
+    //     //   fontDisplay: FontDisplay.FALLBACK,
+    //     // },
+    //   });
+    // }
+
+    componentDidMount() {
+      // StatusBar.setHidden(true);
+      StatusBar.setTranslucent(true);
+      // Font.loadAsync({
+      //   'Roboto_medium': require('./assets/fonts/Roboto_medium.ttf'),
+      // });
     }
 
     render() {
-        // if (this.state.fontLoaded) {
-            return (
-              <HomeNavigation />
-            );
-        // }
+      // if (!this.state.fontLoaded) {
+      //   return (
+      //     <View></View>
+      //   );
+      // }
+      // else {
+        
+      // }
+      return (
+
+        <HomeNavigation />
+
+      );
     }
 }

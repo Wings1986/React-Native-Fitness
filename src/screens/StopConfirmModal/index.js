@@ -8,14 +8,12 @@ import {
   StyleSheet,
   Dimensions,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import colors from "../../style/colors";
-import { TouchableOpacity } from "react-native-gesture-handler";
-// import { ReminderModal } from "./ReminderModal";
-
 const { width, height } = Dimensions.get("window");
 
-export class StopConfirmModel extends Component {
+export class StopConfirmModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -84,10 +82,19 @@ export class StopConfirmModel extends Component {
                     justifyContent:'center', 
                     alignItems:'center', 
                     marginVertical:30,
+                    // backgroundColor:'red',
+                    flex:1,
+
                 }}>
                      <Image
                         source={require('../../assets/images/image_18.png')}
-                        style={{resizeMode:'cover',}}>
+                        style={{
+                          resizeMode:'stretch',
+                          width:'50%',
+                          height:'100%'
+                        }}
+
+                        >
                      </Image>
                 </View>
 

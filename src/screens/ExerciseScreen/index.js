@@ -39,8 +39,7 @@ import * as Progress from 'react-native-progress';
 import globalStyle from '../../style/globalStyle.js';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../../style/colors.js';
-import { StopConfirmModel } from '../StopConfirmModel/index.js';
-
+import { StopConfirmModal } from '../StopConfirmModal/index.js';
 
 
 // import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -64,8 +63,6 @@ const font_type = {
 };
 // END TO SETUP FONT-TYPE AND FONT-SIZE
 // let {width, height} = Dimensions.get('window');
-
-
 
 export default class ExerciseScreen extends React.Component {
   constructor(props) {
@@ -104,8 +101,6 @@ export default class ExerciseScreen extends React.Component {
 
       let currentActionImg;
       let value = Math.floor(this.state.currentTime / 2) % 5;
-
-
 
       switch(value){
         case 1:
@@ -256,7 +251,7 @@ export default class ExerciseScreen extends React.Component {
             height={3}
             />
 
-          <Footer style={globalStyle.FooterContainer}>
+          <Footer style={[globalStyle.FooterContainer, {borderTopWidth:0}]}>
                 <TouchableOpacity 
                     style={{flex:1,justifyContent:'center', flexDirection:'row'}}
                     onPress={()=>this.onPressPause()}
@@ -269,12 +264,12 @@ export default class ExerciseScreen extends React.Component {
           </Footer>
 
 
-          <StopConfirmModel
+          <StopConfirmModal
             isShowModal = {this.state.isShowModal}
             onDismissModalByCancel = {this.onDismissModalByCancel}
             onDismissModalByStop = {this.onDismissModalByStop}
           >
-          </StopConfirmModel>
+          </StopConfirmModal>
 
       </Container>
  

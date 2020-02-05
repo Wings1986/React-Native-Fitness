@@ -60,35 +60,6 @@ const font_type = {
 // END TO SETUP FONT-TYPE AND FONT-SIZE
 // let {width, height} = Dimensions.get('window');
 
-
-// const action_array = [
-//     {
-//       value: '0',
-//       img: require('./../../../assets/icon/ic_job.png'),
-//       description: 'description 2.',
-//     },
-//     {
-//         value: '0',
-//         img: require('./../../../assets/icon/ic_job.png'),
-//         description: 'description 2.',
-//       },
-//       {
-//         value: '0',
-//         img: require('./../../../assets/icon/ic_job.png'),
-//         description: 'description 2.',
-//       },
-//       {
-//         value: '0',
-//         img: require('./../../../assets/icon/ic_job.png'),
-//         description: 'description 2.',
-//       },
-//       {
-//         value: '0',
-//         img: require('./../../../assets/icon/ic_job.png'),
-//         description: 'description 2.',
-//       },
-//   ];
-
 export default class DayScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -179,8 +150,10 @@ export default class DayScreen extends React.Component {
     }
 
     return (
-     
       <Container style={{backgroundColor:colors.backgroundColor}}>
+            
+            <StatusBar hidden={true} />
+
             <Header hasTabs style={globalStyle.headerContainer}>
                 <Left style={{flex: 1}}>
         
@@ -191,6 +164,7 @@ export default class DayScreen extends React.Component {
                 <Right style={{flex: 1}}>
                 </Right>
             </Header>
+
           {/* <Container> */}
           <View style={{flex:1}}>
               <View      

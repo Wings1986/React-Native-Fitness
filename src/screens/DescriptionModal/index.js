@@ -8,10 +8,9 @@ import {
   StyleSheet,
   Dimensions,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import colors from "../../style/colors";
-import { TouchableOpacity } from "react-native-gesture-handler";
-// import { ReminderModal } from "./ReminderModal";
 
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -73,7 +72,7 @@ export class DescriptionModal extends Component {
                     Растяжка мышц поясницы
                 </Text>
 
-                <View style={{marginHorizontal:15, flex:1}}>
+                <View style={{marginHorizontal:15}}>
                     <Text
                         style={{
                         color: colors.textColor,
@@ -93,18 +92,21 @@ export class DescriptionModal extends Component {
                     width:'100%', 
                     justifyContent:'center', 
                     alignItems:'center', 
-                    marginVertical:30,
+                    flex:1,
+                    // marginVertical:30,
+                    // backgroundColor:'red'
                 }}>
                      <Image
                         source={require('../../assets/images/image_detail.png')}
-                        style={{resizeMode:'cover',}}>
+                        style={{resizeMode:'cover', width:'50%', height:'100%'}}>
                      </Image>
                 </View>
 
                
-                <View
+                <TouchableOpacity 
+                    onPress={()=>this.handleClose()}
                     style={{ 
-                        width:'100%', 
+                        width: width * 0.8,
                         justifyContent:'center', 
                         alignItems:'center', 
                         textAlignVertical:'center', 
@@ -112,8 +114,8 @@ export class DescriptionModal extends Component {
                         borderTopWidth:1,
                         borderTopColor:colors.textColor        
                     }}>
-                        <TouchableOpacity 
-                            onPress={()=>this.handleClose()}>
+                        <View 
+                            >
                             <Text 
                                 style={{ 
                                 width:'100%',
@@ -123,8 +125,8 @@ export class DescriptionModal extends Component {
                                 textAlignVertical:'center',
                                 textAlign:'center',
                                 alignItems: 'center'}}>Закрыть</Text>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
 
 
                 
