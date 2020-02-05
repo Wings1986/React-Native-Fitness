@@ -41,16 +41,6 @@ import { Ionicons } from '@expo/vector-icons';
 import colors from '../../style/colors.js';
 import { StopConfirmModal } from '../StopConfirmModal/index.js';
 
-
-// import FontAwesome from 'react-native-vector-icons/FontAwesome';
-// import EntypoIcon from 'react-native-vector-icons/Entypo';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
-// import * as RNLocalize from 'react-native-localize';
-// import * as myLanguage from '../../translations/index.js';
-// import GlobalInclude from "../../../../Global/GlobalInclude/globalinclude.js";
-
-//GUIDELINE SIZES ARE BASED ON STANDARD ~5" SCREEN
-// BEGIN TO SETUP FONT-TYPE AND FONT-SIZE
 const guidelineBaseWidth = 350;
 const guidelineBaseHeight = 680;
 const scale = size =>
@@ -61,8 +51,7 @@ const font_type = {
   FontLight: 'Helvetica',
   FontBold: 'Helvetica-Bold',
 };
-// END TO SETUP FONT-TYPE AND FONT-SIZE
-// let {width, height} = Dimensions.get('window');
+
 
 export default class ExerciseScreen extends React.Component {
   constructor(props) {
@@ -125,11 +114,6 @@ export default class ExerciseScreen extends React.Component {
       this.setState({currentActionImg : currentActionImg});
     }, 1000);
   }
-
-  handleLocalizationChange = () => {
-    myLanguage.setI18nConfig();
-    this.forceUpdate();
-  };
   
   onDismissModalByStop(){
     this.setState({isShowModal : false});
