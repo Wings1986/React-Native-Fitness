@@ -55,16 +55,14 @@ export class DescriptionModal extends Component {
             end={{x: 0, y: 1}} 
             colors={['#55D3CBEE', '#A5D3D0EE', '#FFFFFFEE']}
             style={{ flex: 1, justifyContent:'center', alignContent:'center', alignItems:'center'}}>
-        {/* <View
-            style={{ flex: 1, backgroundColor:colors.lightBlue, justifyContent:'center', alignContent:'center', alignItems:'center'}}> */}
 
-          {/* <View style={{ ...styles.modalOuterContainer, top: this.state.top }}> */}
             <View style={styles.modalInnerContainer}>
                 <Text
                     style={{
                     color: colors.lightBlue,
-                    fontSize: 16,
-                    marginBottom: 15,
+                    fontSize: 18,
+                    marginTop: 10,
+                    marginBottom: 20,
                     justifyContent:'center',
                     alignItems:'center',
                     fontWeight:'bold'
@@ -72,11 +70,11 @@ export class DescriptionModal extends Component {
                     Растяжка мышц поясницы
                 </Text>
 
-                <View style={{marginHorizontal:15}}>
+                <View style={{marginHorizontal:28}}>
                     <Text
                         style={{
                         color: colors.textColor,
-                        fontSize: 16,
+                        fontSize: 14,
                         marginBottom: 15,
                         justifyContent:'center',
                         alignItems:'center',
@@ -93,6 +91,7 @@ export class DescriptionModal extends Component {
                     justifyContent:'center', 
                     alignItems:'center', 
                     flex:1,
+                    marginTop:30,
                     // marginVertical:30,
                     // backgroundColor:'red'
                 }}>
@@ -106,13 +105,13 @@ export class DescriptionModal extends Component {
                 <TouchableOpacity 
                     onPress={()=>this.handleClose()}
                     style={{ 
-                        width: width * 0.8,
+                        width: width * 0.85,
                         justifyContent:'center', 
                         alignItems:'center', 
                         textAlignVertical:'center', 
                         height:70,
                         borderTopWidth:1,
-                        borderTopColor:colors.textColor        
+                        borderTopColor:'#55D3CB33'        
                     }}>
                         <View 
                             >
@@ -150,7 +149,7 @@ const styles = StyleSheet.create({
   },
   modalInnerContainer: {
     height: height * 0.7,
-    width: width * 0.8,
+    width: width * 0.85,
     // backgroundColor: "rgba(102,51,204,0.9)",
     backgroundColor: "white",
     paddingTop: 20,

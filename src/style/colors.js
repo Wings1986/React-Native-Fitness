@@ -1,7 +1,13 @@
 export default {
     feedTitleText: '#747D8C',
+
+    color_start:'55D3CBEE',
+    color_middle:'#A5D3D0EE',
+    color_end:'FF0000EE',
+
     dark_grey : '#747D8C',
     lightBlue :'#55D3CB',
+    lightBlueAlpha :'#55D3CBBB',
     actionText : '#55D3CB',
     backgroundColor: '#F8FEFD',
     textColor : '#97BBBB',

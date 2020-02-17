@@ -35,6 +35,8 @@ import globalStyle from '../../style/globalStyle.js';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../../style/colors.js';
 
+import { LinearGradient } from 'expo-linear-gradient';
+
 import {DescriptionModal} from './../DescriptionModal';
 // import {DescriptionModal} from './../StopConfirmModel';
 
@@ -76,10 +78,6 @@ export default class DayScreen extends React.Component {
     // RNLocalize.addEventListener('change', this.handleLocalizationChange);
   }
 
-  handleLocalizationChange = () => {
-    myLanguage.setI18nConfig();
-    this.forceUpdate();
-  };
   
   showAlert(alertTitle, alertContent) {
     Alert.alert(
@@ -113,14 +111,15 @@ export default class DayScreen extends React.Component {
 
         <View style={styles.flatListItemView}>
         
-              <Image
-                source={require('../../assets/images/image_3.png')}
-                style={styles.fitness_image}
-              />
+            <Image
+              source={require('../../assets/images/image_3.png')}
+              style={styles.fitness_image}
+            />
 
-            <View style={{flex:4,}}>
+            <View style={{flex:4,justifyContent: 'center',}}>
                 <Text style={styles.actionTitleText}>Бег, колени вверх</Text>
                 <Text style={styles.actionTimeText}>15 секунд</Text>
+
             </View>
             {
                 item == 1?
@@ -150,75 +149,84 @@ export default class DayScreen extends React.Component {
     }
 
     return (
-      <Container style={{backgroundColor:colors.backgroundColor}}>
-            
-            <StatusBar hidden={true} />
 
-            <Header hasTabs style={globalStyle.headerContainer}>
-                <Left style={{flex: 1}}>
-        
-                </Left>
-                <Body style={{flex: 3, alignItems: 'center'}}>
-                <Title style={globalStyle.headerTitle}>День 6</Title>
-                </Body>
-                <Right style={{flex: 1}}>
-                </Right>
-            </Header>
+      <Container>
 
-          {/* <Container> */}
+        <LinearGradient 
+          style={{flex:1}}
+          start={{x: 0, y: 0}} 
+          end={{x: 0, y: 1}} 
+          colors={['#55D3CB', '#A5D3D0', '#FFFFFF']}>
+
+
+         <StatusBar hidden={true} />
+
+          <Header hasTabs style={globalStyle.headerContainer}>
+              <Left style={{flex: 1}}>
+              </Left>
+              <Body style={{flex: 3, alignItems: 'center'}}>
+              <Title style={globalStyle.headerTitle}>День 6</Title>
+              </Body>
+              <Right style={{flex: 1}}>
+              </Right>
+          </Header>
+
+
           <View style={{flex:1}}>
-              <View      
+               <View      
                 style={{
                   width:'100%',
                   flexDirection:'row',
-                  backgroundColor:colors.lightBlue,
                   alignSelf: 'center',
                   alignItems: 'center',
                   justifyContent:'center',
+                  marginTop:25,
+                  marginBottom:15,
+                  paddingHorizontal:30,
                 }}>
-                  <View style={{flex:1,  flexDirection:'row', justifyContent:'flex-start', marginVertical:15,marginHorizontal:10}}>
+                  <View style={{flex:1,  flexDirection:'row', justifyContent:'flex-start', alignItems:'center'}}>
                     <Image
                         style={{
-                            width: 20,
-                            height: 20,
+                            width: 24,
+                            height: 24,
                             alignSelf: 'center',
                             alignItems: 'center',
-                            marginHorizontal:10,
+                            marginRight:10,
                         }}
                         source={require('../../assets/images/icon_count.png')}
                         />
 
                     <Text style={styles.timeText}>20 упражнений</Text>
                   </View>
-                  <View style={{flex:1,  flexDirection:'row', justifyContent:'flex-start', marginVertical:15,marginHorizontal:10}}>
-                  <Image
-                    style={{
-                        width: 25,
-                        height: 25,
-                        alignSelf: 'center',
-                        alignItems: 'center',
-                        marginHorizontal:10,
-                    }}
-                    source={require('../../assets/images/icon_time.png')}
-                    />
+                  <View style={{flex:1,  flexDirection:'row', justifyContent:'flex-end', alignItems:'center'}}>
+                    <Image
+                      style={{
+                          width: 24,
+                          height: 24,
+                          alignSelf: 'center',
+                          alignItems: 'center',
+                          marginRight:10,
+                      }}
+                      source={require('../../assets/images/icon_time.png')}
+                      />
                     <Text style={styles.timeText}>14 минут</Text>
                   </View>
               </View>
 
               <View style={styles.container}>
-            {this.state.loading ? (
-              <ActivityIndicator size="large" />
-            ) : (
-              <FlatList
-                style={{width: '100%', marginVertical:20, }}
-                keyExtractor={(item, index) => index.toString()}
-                data={this.state.flatListItemArray}
-                onEndReachedThreshold={0.5}
-                renderItem={({item, index}) => this.renderFeedItem(item, index)}
-                ItemSeparatorComponent={() => <View style={styles.separator} />}
-              />
-            )}
-          </View>
+                {this.state.loading ? (
+                  <ActivityIndicator size="large" />
+                ) : (
+                  <FlatList
+                    style={{width: '100%', marginVertical:30, backgroundColor:'#F8FEFD'}}
+                    keyExtractor={(item, index) => index.toString()}
+                    data={this.state.flatListItemArray}
+                    onEndReachedThreshold={0.5}
+                    renderItem={({item, index}) => this.renderFeedItem(item, index)}
+                    ItemSeparatorComponent={() => <View style={styles.separator} />}
+                  />
+                )}
+              </View>
           </View> 
           <Footer style={globalStyle.FooterContainer}>
                 <TouchableOpacity 
@@ -237,13 +245,18 @@ export default class DayScreen extends React.Component {
                 </Image>
           </Footer>
 
+
           <DescriptionModal
-            isShowDescriptionModal = {this.state.isShowDescriptionModal}
-            onPressDismissModal = {this.onPressDismissModal}
-          >
-          </DescriptionModal>
+             isShowDescriptionModal = {this.state.isShowDescriptionModal}
+             onPressDismissModal = {this.onPressDismissModal}
+           >
+           </DescriptionModal>
+
+        </LinearGradient>
+
       </Container>
- 
+         
+      
     );
   }
 }
@@ -267,7 +280,7 @@ const styles = StyleSheet.create({
     elevation: 0,
   },
   timeText : {
-      fontSize:20,
+      fontSize:16,
       fontWeight:'bold',
       color:'white',
   },
@@ -275,23 +288,26 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       width:'100%',
       paddingHorizontal:20,
-      paddingVertical:10,
+      paddingVertical:4,
       justifyContent:'center',
   },
 
   fitness_image: {
-    width: 36,
-    height: 40,
+    width: 38,
+    height: 42,
     marginRight: 20,
+    marginLeft: 15,
     resizeMode:'stretch'
   },
   actionTitleText:{
       color:colors.actionText,
-      fontSize:18,
+      fontSize:14,
       fontWeight:'bold'
   },
   actionTimeText:{
     color:colors.actionText,
+    marginTop:5,
+    fontSize:13,
   },
   separator:{
       height:15
@@ -302,11 +318,12 @@ const styles = StyleSheet.create({
     alignItems:'center',
   },
   footerImageView:{
-      width:50,
-      height:50
+      width:60,
+      height:60
   },
   container:{
-      flex:1
+      flex:1,
+      backgroundColor:'#F8FEFD'
   }
 });
 // END TO MAKE STYLE

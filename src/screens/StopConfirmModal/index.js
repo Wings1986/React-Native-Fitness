@@ -48,14 +48,15 @@ export class StopConfirmModal extends Component {
         transparent={true}
         style={{ flex: 1 }}
         visible={this.state.isShowingModal}>
-        <View style={{ flex: 1, backgroundColor: '#55D3CB88', justifyContent:'center', alignContent:'center', alignItems:'center'}}>
+        <View style={{ flex: 1, backgroundColor: '#C4C4C4BB', justifyContent:'center', alignContent:'center', alignItems:'center'}}>
           {/* <View style={{ ...styles.modalOuterContainer, top: this.state.top }}> */}
             <View style={styles.modalInnerContainer}>
                 <Text
                     style={{
-                    color: colors.lightBlue,
-                    fontSize: 16,
-                    marginBottom: 15,
+                    color: '#36908B',
+                    fontSize: 18,
+                    marginTop:10,
+                    marginBottom: 20,
                     justifyContent:'center',
                     alignItems:'center',
                     fontWeight:'bold'
@@ -66,10 +67,11 @@ export class StopConfirmModal extends Component {
                 <View style={{marginHorizontal:15,}}>
                     <Text
                         style={{
-                        color: colors.textColor,
-                        fontSize: 16,
+                        color: '#485E5E',
+                        fontSize: 13,
                         justifyContent:'center',
                         alignItems:'center',
+                        marginHorizontal:20
                         }}>
                         Вы уверены, что хотите прекратить сегодняшнюю сессию?
                         {'\n'}                    
@@ -89,9 +91,10 @@ export class StopConfirmModal extends Component {
                      <Image
                         source={require('../../assets/images/image_18.png')}
                         style={{
-                          resizeMode:'stretch',
-                          width:'50%',
-                          height:'100%'
+                          resizeMode:'contain',
+                          width:'100%',
+                          height:'100%',
+                          marginVertical:10
                         }}
 
                         >
@@ -105,18 +108,18 @@ export class StopConfirmModal extends Component {
                 }}>
 
                     <TouchableOpacity
-                            style={{backgroundColor: 'red', borderRadius: 5, width:200, height:50, justifyContent:'center', alignContent:"center", alignItems:'center', }}
+                            style={{backgroundColor: 'red', borderRadius: 8, width:270, height:60, justifyContent:'center', alignContent:"center", alignItems:'center', }}
                             onPress={this.handleStop}
                           >
-                            <Text style={{color:'#B8B8B8', fontSize: 18, fontWeight:'bold'}}> СТОП </Text>
+                            <Text style={{color:'#B8B8B8', fontSize: 20, fontWeight:'bold'}}> СТОП </Text>
                     </TouchableOpacity>         
 
                     <TouchableOpacity
-                            style={{backgroundColor: '#ffffff', borderRadius: 5, borderWidth:1, borderColor:'#A7A7A7', width:200, height:50, justifyContent:'center', alignContent:"center", alignItems:'center', 
-                                    marginVertical: 20}}
+                            style={{backgroundColor: '#ffffff', borderRadius: 8, borderWidth:1, borderColor:'#A7A7A7', width:270, height:60, justifyContent:'center', alignContent:"center", alignItems:'center', 
+                                    marginTop: 8, marginBottom:30}}
                             onPress={this.handleCancel}
                           >
-                            <Text style={{color:'#B8B8B8', fontSize: 18, fontWeight:'bold'}}> ОТМЕНА </Text>
+                            <Text style={{color:'#B8B8B8', fontSize: 20, fontWeight:'bold'}}> ОТМЕНА </Text>
                     </TouchableOpacity>                  
 
                 </View>
@@ -128,16 +131,7 @@ export class StopConfirmModal extends Component {
 }
 
 const styles = StyleSheet.create({
-  modalOuterContainer: {
-    flex: 1,
-    // position: "absolute",
-    // left: width * 0.148,
-    // top: this.state.top,
-    backgroundColor: "rgba(0, 0, 0, 0.3)",
-    borderRadius: 8,
-    justifyContent:'center',
-    alignItems:'center'
-  },
+  
   modalInnerContainer: {
     height: height * 0.7,
     width: width * 0.8,
@@ -150,18 +144,6 @@ const styles = StyleSheet.create({
     // flex:1,
     justifyContent:'space-between',
     // justifyContent:'center'
-  },
-  modalButtonContainer: {
-    width: 0.25 * width,
-  },
-  TextInput: {
-    marginLeft: width * 0.03,
-    marginRight: width * 0.03,
-    marginTop: width * 0.01,
-    marginBottom: width * 0.02,
-    backgroundColor: "rgba(255,140,0,0.1)",
-    height: 50,
-    color: "#00ffcc",
   },
 
 });

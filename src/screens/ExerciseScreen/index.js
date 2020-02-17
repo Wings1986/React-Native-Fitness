@@ -39,6 +39,9 @@ import * as Progress from 'react-native-progress';
 import globalStyle from '../../style/globalStyle.js';
 import { Ionicons } from '@expo/vector-icons';
 import colors from '../../style/colors.js';
+
+import { LinearGradient } from 'expo-linear-gradient';
+
 import { StopConfirmModal } from '../StopConfirmModal/index.js';
 
 const guidelineBaseWidth = 350;
@@ -146,15 +149,15 @@ export default class ExerciseScreen extends React.Component {
       <Text
           style={{
           color: colors.lightBlue,
-          fontSize: 40,
+          fontSize: 45,
           
-          marginVertical: 30,
+          marginBottom: 50,
           justifyContent:'center',
           alignItems:'center',
           fontWeight:'bold',
           textAlign: 'center'
           }}>
-          {curMin}:{curSec}
+          {curMin} : {curSec}
       </Text>
     )
   }
@@ -162,44 +165,55 @@ export default class ExerciseScreen extends React.Component {
   render() {
     const color = 'black';
     return (
-      <Container style={{backgroundColor:colors.backgroundColor}}>
+      <Container>
+
+        <LinearGradient 
+          style={{flex:1}}
+          start={{x: 0, y: 0}} 
+          end={{x: 0, y: 1}} 
+          colors={['#55D3CB', '#A5D3D0', '#FFFFFF']}>
+
             <Header hasTabs style={globalStyle.headerContainer}>
                 <Left style={{flex: 1}}>
-                    <Button transparent onPress={() => this.props.navigation.goBack()}>
+                    <Button style={{marginLeft:10}} transparent onPress={() => this.props.navigation.goBack()}>
                         <Ionicons
-                            name="ios-arrow-back"
-                            size={25}
-                            style={{color: colors.colorRedLight}}
+                            name="md-arrow-back"
+                            size={30}
+                            style={{color:'#FFFFFF',}}
                         />
                     </Button>
                 </Left>
                 <Body style={{flex: 3, alignItems: 'center'}}>
-                <Title > </Title>
+                <Title style={{color:'white'}}> 5 / 21 </Title>
                 </Body>
                 <Right style={{flex: 1}}>
                 </Right>
             </Header>
 
-          {/* <Container> */}
-            <View style={{flex:1}}>
-                <View      
+            <View      
                     style={{
                         width:'100%',
-                        height:50,
-                        backgroundColor:colors.lightBlue,
+                        height:35,
                         alignSelf: 'center',
                         alignItems: 'center',
                         justifyContent:'center',
+                        marginTop:5,
                     }}>
-                    <Dots length={20}  active={this.state.active} activeColor='#FFFFFF' passiveColor='#FFFFFF88'/>
+                    <Dots length={25}  active={this.state.active} 
+                          activeColor='#FFFFFF' passiveColor='#FFFFFF88'
+                          activeDotWidth={10} activeDotHeight={10}
+                          passiveDotWidth={8} passiveDotHeight={8}/>
                 </View>
+
+            <View style={{flex:1, backgroundColor:'#F8FEFD'}}>
+                
                 <Text
                     style={{
                     width:'100%',
                     color: colors.lightBlue,
-                    fontSize: 16,
-                    marginTop:50,
-                    marginBottom: 35,
+                    fontSize: 25,
+                    marginTop:38,
+                    marginBottom: 20,
                     justifyContent:'center',
                     alignItems:'center',
                     alignSelf: 'center',
@@ -255,6 +269,7 @@ export default class ExerciseScreen extends React.Component {
           >
           </StopConfirmModal>
 
+        </LinearGradient>
       </Container>
  
     );
@@ -262,64 +277,11 @@ export default class ExerciseScreen extends React.Component {
 }
 // BEGIN TO MAKE STYLE 
 const styles = StyleSheet.create({
-  background_image: {
-    flex: 1,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-  },
-  header: {
-    backgroundColor: 'rgba(0,0,0,0)',
-    height: Dimensions.get('window').width * 0.15,
-    borderBottomWidth: 0,
-    ...Platform.select({
-      ios: {},
-      android: {
-        marginTop: moderateScale(25),
-      },
-    }),
-    elevation: 0,
-  },
-  timeText : {
-      fontSize:20,
-      fontWeight:'bold',
-      color:'white',
-  },
-  flatListItemView:{
-      flexDirection:'row',
-      width:'100%',
-      paddingHorizontal:20,
-      paddingVertical:10,
-      justifyContent:'center',
+ 
+  footerImageView:{
+      width:60,
+      height:60
   },
 
-  fitness_image: {
-    width: 36,
-    height: 40,
-    marginRight: 20,
-    resizeMode:'stretch'
-  },
-  actionTitleText:{
-      color:colors.actionText,
-      fontSize:18,
-      fontWeight:'bold'
-  },
-  actionTimeText:{
-    color:colors.actionText,
-  },
-  separator:{
-      height:15
-  },
-  FooterContainer:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-  },
-  footerImageView:{
-      width:50,
-      height:50
-  },
-  container:{
-      flex:1
-  }
 });
 // END TO MAKE STYLE

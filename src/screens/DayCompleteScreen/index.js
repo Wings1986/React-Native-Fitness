@@ -47,15 +47,13 @@ export default class DayCompleteScreen extends React.Component {
   render() {
     return (
         <View style={{ flex: 1, backgroundColor:'#F8FEFD', justifyContent:'center', alignContent:'center', alignItems:'center'}}>
-        
-
 
             <Text
                 style={{
-                color: colors.lightBlue,
-                fontSize: 16,
-                marginTop:100,
-                marginBottom: 15,
+                color: colors.lightBlueAlpha,
+                fontSize: 14,
+                marginTop:110,
+                marginBottom: 5,
                 justifyContent:'center',
                 alignItems:'center',
                 }}>
@@ -65,7 +63,7 @@ export default class DayCompleteScreen extends React.Component {
             <Text
                 style={{
                 color: colors.lightBlue,
-                fontSize: 26,
+                fontSize: 28,
                 marginBottom: 15,
                 justifyContent:'center',
                 alignItems:'center',
@@ -77,10 +75,10 @@ export default class DayCompleteScreen extends React.Component {
 
             <Text
                 style={{
-                color: colors.lightBlue,
-                fontSize: 16,
-                marginTop:30,
-                marginBottom: 15,
+                color: colors.lightBlueAlpha,
+                fontSize: 14,
+                marginTop:25,
+                marginBottom: 5,
                 justifyContent:'center',
                 alignItems:'center',
                 }}>
@@ -90,7 +88,7 @@ export default class DayCompleteScreen extends React.Component {
             <Text
                 style={{
                 color: colors.lightBlue,
-                fontSize: 26,
+                fontSize: 28,
                 justifyContent:'center',
                 alignItems:'center',
                 fontWeight:'bold'
@@ -104,15 +102,16 @@ export default class DayCompleteScreen extends React.Component {
                   width:'100%', 
                   justifyContent:'center', 
                   alignItems:'center', 
-                  marginVertical:30,
+                  marginTop:40,
+                  marginBottom:25
                 } }>
                    <Image
                       source={require('../../assets/images/illustration.png')}
-                      style={{resizeMode:'cover',}}>
+                      style={{resizeMode:'cover', width:'100%', height:"100%"}}>
                    </Image>
               </View>
 
-              <Footer style={globalStyle.FooterContainer}>
+              <Footer style={globalStyle.FooterContainerNoline}>
                 <TouchableOpacity 
                     style={{flex:1,justifyContent:'center', flexDirection:'row'}}
                     onPress={()=>this.onPressRefresh()}
@@ -134,7 +133,7 @@ export default class DayCompleteScreen extends React.Component {
 const styles = StyleSheet.create({
   
   footerImageView:{
-    width:50,
-    height:50
+    width:40,
+    height:40
   },
 });
