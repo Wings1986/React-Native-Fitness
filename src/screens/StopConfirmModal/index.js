@@ -11,6 +11,9 @@ import {
   TouchableOpacity,
 } from "react-native";
 import colors from "../../style/colors";
+
+import * as myLanguage from  './../../translations/index.js';
+
 const { width, height } = Dimensions.get("window");
 
 export class StopConfirmModal extends Component {
@@ -26,6 +29,7 @@ export class StopConfirmModal extends Component {
   componentDidMount() {
     
     this.setState({isShowingModal : this.props.isShowModal});
+    myLanguage.setI18nConfig();
   }
 
   componentDidUpdate(){
@@ -61,7 +65,7 @@ export class StopConfirmModal extends Component {
                     alignItems:'center',
                     fontWeight:'bold'
                     }}>
-                    Остановить сеанс
+                    {myLanguage.translate('stop_session')}
                 </Text>
 
                 <View style={{marginHorizontal:15,}}>
@@ -73,9 +77,7 @@ export class StopConfirmModal extends Component {
                         alignItems:'center',
                         marginHorizontal:20
                         }}>
-                        Вы уверены, что хотите прекратить сегодняшнюю сессию?
-                        {'\n'}                    
-                        Вам нужно будет возобновить этот день с самого начала.
+                        {myLanguage.translate('stop_text')}
                     </Text>
                 </View>
 
@@ -111,7 +113,7 @@ export class StopConfirmModal extends Component {
                             style={{backgroundColor: 'red', borderRadius: 8, width:270, height:60, justifyContent:'center', alignContent:"center", alignItems:'center', }}
                             onPress={this.handleStop}
                           >
-                            <Text style={{color:'#B8B8B8', fontSize: 20, fontWeight:'bold'}}> СТОП </Text>
+                            <Text style={{color:'#B8B8B8', fontSize: 20, fontWeight:'bold'}}> {myLanguage.translate('stop')} </Text>
                     </TouchableOpacity>         
 
                     <TouchableOpacity
@@ -119,7 +121,7 @@ export class StopConfirmModal extends Component {
                                     marginTop: 8, marginBottom:30}}
                             onPress={this.handleCancel}
                           >
-                            <Text style={{color:'#B8B8B8', fontSize: 20, fontWeight:'bold'}}> ОТМЕНА </Text>
+                            <Text style={{color:'#B8B8B8', fontSize: 20, fontWeight:'bold'}}> {myLanguage.translate('cancel')} </Text>
                     </TouchableOpacity>                  
 
                 </View>

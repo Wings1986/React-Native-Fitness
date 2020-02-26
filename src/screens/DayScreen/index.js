@@ -38,14 +38,9 @@ import colors from '../../style/colors.js';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import {DescriptionModal} from './../DescriptionModal';
-// import {DescriptionModal} from './../StopConfirmModel';
 
-// import FontAwesome from 'react-native-vector-icons/FontAwesome';
-// import EntypoIcon from 'react-native-vector-icons/Entypo';
-// import Ionicons from 'react-native-vector-icons/Ionicons';
-// import * as RNLocalize from 'react-native-localize';
-// import * as myLanguage from '../../translations/index.js';
-// import GlobalInclude from "../../../../Global/GlobalInclude/globalinclude.js";
+
+import * as myLanguage from  './../../translations/index.js';
 
 //GUIDELINE SIZES ARE BASED ON STANDARD ~5" SCREEN
 // BEGIN TO SETUP FONT-TYPE AND FONT-SIZE
@@ -75,17 +70,7 @@ export default class DayScreen extends React.Component {
   }
 
   componentDidMount() {
-    // RNLocalize.addEventListener('change', this.handleLocalizationChange);
-  }
-
-  
-  showAlert(alertTitle, alertContent) {
-    Alert.alert(
-      alertTitle,
-      alertContent,
-      [{text: 'OK', onPress: () => console.log('OK Pressed')}],
-      {cancelable: false},
-    );
+    myLanguage.setI18nConfig();
   }
 
   onPressDescriptionModal(){
@@ -117,9 +102,8 @@ export default class DayScreen extends React.Component {
             />
 
             <View style={{flex:4,justifyContent: 'center',}}>
-                <Text style={styles.actionTitleText}>Бег, колени вверх</Text>
-                <Text style={styles.actionTimeText}>15 секунд</Text>
-
+                <Text style={styles.actionTitleText}>{myLanguage.translate('exercise_title')}</Text>
+                <Text style={styles.actionTimeText}>{15 + " " + myLanguage.translate('sec')}</Text>
             </View>
             {
                 item == 1?
@@ -165,7 +149,7 @@ export default class DayScreen extends React.Component {
               <Left style={{flex: 1}}>
               </Left>
               <Body style={{flex: 3, alignItems: 'center'}}>
-              <Title style={globalStyle.headerTitle}>День 6</Title>
+              <Title style={globalStyle.headerTitle}>{myLanguage.translate('day') + " " + 6}</Title>
               </Body>
               <Right style={{flex: 1}}>
               </Right>
@@ -196,7 +180,7 @@ export default class DayScreen extends React.Component {
                         source={require('../../assets/images/icon_count.png')}
                         />
 
-                    <Text style={styles.timeText}>20 упражнений</Text>
+                    <Text style={styles.timeText}>20 {myLanguage.translate('exercise')}</Text>
                   </View>
                   <View style={{flex:1,  flexDirection:'row', justifyContent:'flex-end', alignItems:'center'}}>
                     <Image
@@ -209,7 +193,7 @@ export default class DayScreen extends React.Component {
                       }}
                       source={require('../../assets/images/icon_time.png')}
                       />
-                    <Text style={styles.timeText}>14 минут</Text>
+                    <Text style={styles.timeText}>14 {myLanguage.translate('min')}</Text>
                   </View>
               </View>
 

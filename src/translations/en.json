@@ -1,0 +1,22 @@
+{
+    "exercise" : "exercises",
+    "day": "Day",
+    "sec" : "sec",
+    "min" : "min",
+    "kcal" : "kcal",
+
+    "exercise_title": "Running knees up",
+
+    "detail_title" : "Stretching the lower back muscles",
+    "detail_descript" : "Sit on the floor, move your right foot forward, and your left foot back.\n\nBend your knees at an angle of 90 degrees or slightly more. Put your right hand on the floor, raise your left hand above your head",
+    "close" : "Close",
+
+    "stop_session" : "Stop session",
+    "stop_text" : "Are you sure you want to stop today’s session?\nYou will need to resume this day from the beginning.",
+    "stop" : "STOP",
+    "cancel" : "CANCEL",
+
+    "train_time" : "Training time",
+    "spend_today" : "Spent today",
+    
+}

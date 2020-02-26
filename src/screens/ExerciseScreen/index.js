@@ -42,6 +42,8 @@ import colors from '../../style/colors.js';
 
 import { LinearGradient } from 'expo-linear-gradient';
 
+import * as myLanguage from  './../../translations/index.js';
+
 import { StopConfirmModal } from '../StopConfirmModal/index.js';
 
 const guidelineBaseWidth = 350;
@@ -78,6 +80,7 @@ export default class ExerciseScreen extends React.Component {
 
   componentDidMount() {
      this.updateCurrentStatus(); 
+     myLanguage.setI18nConfig();
   }
 
   updateCurrentStatus(){
@@ -221,7 +224,7 @@ export default class ExerciseScreen extends React.Component {
                     textAlign: 'center'
                     }}
                     >
-                    Бег, колени вверх
+                    {myLanguage.translate('exercise_title')}
                 </Text>
 
                 <View style={{ 

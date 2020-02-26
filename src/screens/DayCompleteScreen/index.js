@@ -33,15 +33,19 @@ import {
 import colors from "../../style/colors";
 import globalStyle from '../../style/globalStyle.js';
 
-
+import * as myLanguage from  './../../translations/index.js';
 
 const { width, height } = Dimensions.get("window");
 
 export default class DayCompleteScreen extends React.Component {
 
-    onPressRefresh(){
-      this.props.navigation.navigate('DayScreen')
-    }
+  componentDidMount() {
+    myLanguage.setI18nConfig();
+  }
+
+  onPressRefresh(){
+    this.props.navigation.navigate('DayScreen')
+  }  
 
 
   render() {
@@ -57,7 +61,7 @@ export default class DayCompleteScreen extends React.Component {
                 justifyContent:'center',
                 alignItems:'center',
                 }}>
-                Время тренировки
+                {myLanguage.translate('train_time')}
             </Text>
 
             <Text
@@ -69,7 +73,7 @@ export default class DayCompleteScreen extends React.Component {
                 alignItems:'center',
                 fontWeight:'bold'
                 }}>
-                14 минут
+                {14 + " " + myLanguage.translate('min')}
             </Text>
 
 
@@ -82,7 +86,7 @@ export default class DayCompleteScreen extends React.Component {
                 justifyContent:'center',
                 alignItems:'center',
                 }}>
-                Потрачено сегодня
+                {myLanguage.translate('spend_today')}
             </Text>
 
             <Text
@@ -93,7 +97,7 @@ export default class DayCompleteScreen extends React.Component {
                 alignItems:'center',
                 fontWeight:'bold'
                 }}>
-                120 ккал
+                {12 + " " + myLanguage.translate('kcal')}
             </Text>
 
 

@@ -14,6 +14,8 @@ import colors from "../../style/colors";
 
 import { LinearGradient } from 'expo-linear-gradient';
 
+import * as myLanguage from  './../../translations/index.js';
+
 const { width, height } = Dimensions.get("window");
 
 export class DescriptionModal extends Component {
@@ -29,6 +31,8 @@ export class DescriptionModal extends Component {
   componentDidMount() {
     
     this.setState({isShowingModal : this.props.isShowDescriptionModal});
+
+    myLanguage.setI18nConfig();
   }
 
   componentDidUpdate(){
@@ -67,7 +71,7 @@ export class DescriptionModal extends Component {
                     alignItems:'center',
                     fontWeight:'bold'
                     }}>
-                    Растяжка мышц поясницы
+                    {myLanguage.translate('detail_title')}
                 </Text>
 
                 <View style={{marginHorizontal:28}}>
@@ -79,10 +83,8 @@ export class DescriptionModal extends Component {
                         justifyContent:'center',
                         alignItems:'center',
                         }}>
-                        Сядьте на пол, правую ногу переведите вперёд, левую — назад. 
-                        {'\n'}
-                        {'\n'}
-                        Согните ноги в коленях под углом 90 градусов или чуть больше. Правую руку положите на пол, левую поднимите над головой.
+                        {myLanguage.translate('detail_descript')}
+                        
                     </Text>
                 </View>
 
@@ -123,7 +125,7 @@ export class DescriptionModal extends Component {
                                 justifyContent: 'center',
                                 textAlignVertical:'center',
                                 textAlign:'center',
-                                alignItems: 'center'}}>Закрыть</Text>
+                                alignItems: 'center'}}>{myLanguage.translate('close')}</Text>
                     </View>
                 </TouchableOpacity>
 
