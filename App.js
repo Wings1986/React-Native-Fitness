@@ -12,6 +12,8 @@ import DayScreen from './src/screens/DayScreen';
 import ExerciseScreen from './src/screens/ExerciseScreen';
 import DayCompleteScreen from './src/screens/DayCompleteScreen'
 
+import * as myLanguage from  './src/translations';
+
 console.disableYellowBox = true;
 
 const AppNavigator = createStackNavigator({
@@ -49,11 +51,14 @@ const AppNavigator = createStackNavigator({
 });
 
 const HomeNavigation = createAppContainer(AppNavigator);
+
+myLanguage.setI18nConfig();
+
 export default class App extends React.Component {
     state = {
         fontLoaded: false
     };
-
+    // myLanguage.setI18nConfig();
     // async componentDidMount() {
 
     //   await Font.loadAsync({
@@ -68,9 +73,15 @@ export default class App extends React.Component {
     //   });
     // }
 
+  
     componentDidMount() {
       // StatusBar.setHidden(true);
-      StatusBar.setTranslucent(true);
+      if (Platform.OS === 'android'){
+        StatusBar.setTranslucent(true);
+      }
+      
+      
+
       // Font.loadAsync({
       //   'Roboto_medium': require('./assets/fonts/Roboto_medium.ttf'),
       // });

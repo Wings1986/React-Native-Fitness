@@ -69,10 +69,6 @@ export default class DayScreen extends React.Component {
     this.onPressDismissModal = this.onPressDismissModal.bind(this);
   }
 
-  componentDidMount() {
-    myLanguage.setI18nConfig();
-  }
-
   onPressDescriptionModal(){
 
     this.setState({isShowDescriptionModal : true});

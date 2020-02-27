@@ -29,7 +29,6 @@ export class StopConfirmModal extends Component {
   componentDidMount() {
     
     this.setState({isShowingModal : this.props.isShowModal});
-    myLanguage.setI18nConfig();
   }
 
   componentDidUpdate(){

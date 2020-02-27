@@ -39,10 +39,6 @@ const { width, height } = Dimensions.get("window");
 
 export default class DayCompleteScreen extends React.Component {
 
-  componentDidMount() {
-    myLanguage.setI18nConfig();
-  }
-
   onPressRefresh(){
     this.props.navigation.navigate('DayScreen')
   }  

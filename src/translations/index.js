@@ -18,10 +18,18 @@ export const translate = memoize(
 
 export const setI18nConfig = () => {
   
-  // fallback if no available language fits
-  const fallback = {languageTag: 'en', isRTL: false};
+  var currentLang = getDeviceLanguage();
+  if (currentLang.indexOf('ru') == -1) {
+    currentLang = 'en';
+  }
+  console.log("currentLang = " + currentLang);
 
+  // fallback if no available language fits
+  const fallback = {languageTag: currentLang , isRTL: false};
+
+  
   const {languageTag, isRTL} = fallback;
+
 
   // clear translation cache
   translate.cache.clear();

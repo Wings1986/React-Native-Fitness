@@ -32,7 +32,6 @@ export class DescriptionModal extends Component {
     
     this.setState({isShowingModal : this.props.isShowDescriptionModal});
 
-    myLanguage.setI18nConfig();
   }
 
   componentDidUpdate(){

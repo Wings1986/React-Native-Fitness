@@ -80,7 +80,6 @@ export default class ExerciseScreen extends React.Component {
 
   componentDidMount() {
      this.updateCurrentStatus(); 
-     myLanguage.setI18nConfig();
   }
 
   updateCurrentStatus(){
