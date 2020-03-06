@@ -23,21 +23,29 @@ export class DescriptionModal extends Component {
     super(props);
     this.state = {
       top: height * 0.3,
-      isShowingModal: false
+      isShowingModal: false,
+      item : {},
     };
     this.isShowModal = false;
   }
  
   componentDidMount() {
-    
-    this.setState({isShowingModal : this.props.isShowDescriptionModal});
+
+    this.setState({
+      isShowingModal : this.props.isShowDescriptionModal,
+      item : this.props.modalItem
+    });
 
   }
 
   componentDidUpdate(){
     this.isShowModal = this.props.isShowDescriptionModal;
+
     if (this.state.isShowingModal != this.isShowModal){
-      this.setState({isShowingModal : this.isShowModal});
+      this.setState({
+        isShowingModal : this.isShowModal,
+        item : this.props.modalItem
+      });
     }
   }
 
@@ -82,7 +90,7 @@ export class DescriptionModal extends Component {
                         justifyContent:'center',
                         alignItems:'center',
                         }}>
-                        {myLanguage.translate('detail_descript')}
+                        {this.state.item.Description}
                         
                     </Text>
                 </View>

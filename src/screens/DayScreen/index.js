@@ -42,6 +42,9 @@ import {DescriptionModal} from './../DescriptionModal';
 
 import * as myLanguage from  './../../translations/index.js';
 
+import * as jsonDays from  './../../assets/json/shpagat-days.json';
+import * as jsonExercises from  './../../assets/json/shpagat-exercises.json';
+
 //GUIDELINE SIZES ARE BASED ON STANDARD ~5" SCREEN
 // BEGIN TO SETUP FONT-TYPE AND FONT-SIZE
 const guidelineBaseWidth = 350;
@@ -61,34 +64,74 @@ export default class DayScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        flatListItemArray:[0,0,0,1,1,1],
+        flatListItemArray:[],
         isShowDescriptionModal: false,
+        modalItem : {},
 
+        exercise_count : 0,
+        exercise_duration : 0,
     };
+
     let platform = Platform.OS;
     this.onPressDismissModal = this.onPressDismissModal.bind(this);
+
+    this.currentDay = 0;
   }
 
-  onPressDescriptionModal(){
+  componentDidMount() {
+    let count = jsonDays[this.currentDay].Exercises.length;
+    var duration = 0;
+    var items = [];
 
-    this.setState({isShowDescriptionModal : true});
+    for (let i = 0 ; i < count ; i ++) {
+      let exerciseID = jsonDays[this.currentDay].Exercises[i];
+      let key = "Exercise_" + exerciseID;
+
+      duration += jsonExercises[key].Duration;
+
+      // add item
+      items.push(jsonExercises[key]);
+
+    }
+
+
+
+    this.setState({
+      exercise_count : count,
+      exercise_duration : duration,
+      flatListItemArray : items,
+    });
+
+  }
+
+  onPressDescriptionModal(item){
+
+    this.setState({
+      isShowDescriptionModal : true,
+      modalItem : item,
+    });
     
   }
 
   onPressDismissModal(){
-    this.setState({isShowDescriptionModal : false});
+    this.setState({
+      isShowDescriptionModal : false,
+      modalItem : {},
+    });
   }
 
   onPressPlay(){
 
-      this.props.navigation.navigate('ExerciseScreen')
+      this.props.navigation.navigate('ExerciseScreen', {
+        exercises: this.state.flatListItemArray,
+      }) 
   }
 
   renderFeedItem(item, index) {
     /* Component for Comment */
     return (
 
-      <TouchableOpacity onPress={()=>this.onPressDescriptionModal()}>
+      <TouchableOpacity onPress={()=>this.onPressDescriptionModal(item)}>
 
         <View style={styles.flatListItemView}>
         
@@ -99,10 +142,10 @@ export default class DayScreen extends React.Component {
 
             <View style={{flex:4,justifyContent: 'center',}}>
                 <Text style={styles.actionTitleText}>{myLanguage.translate('exercise_title')}</Text>
-                <Text style={styles.actionTimeText}>{15 + " " + myLanguage.translate('sec')}</Text>
+                <Text style={styles.actionTimeText}>{item.Duration + " " + myLanguage.translate('sec')}</Text>
             </View>
             {
-                item == 1?
+                item.read == 1?
                 <View
                 style={{flex:1, justifyContent:'center', alignItems:'center'}}
                 >
@@ -145,7 +188,7 @@ export default class DayScreen extends React.Component {
               <Left style={{flex: 1}}>
               </Left>
               <Body style={{flex: 3, alignItems: 'center'}}>
-              <Title style={globalStyle.headerTitle}>{myLanguage.translate('day') + " " + 6}</Title>
+              <Title style={globalStyle.headerTitle}>{myLanguage.translate('day') + " " + this.currentDay}</Title>
               </Body>
               <Right style={{flex: 1}}>
               </Right>
@@ -176,7 +219,7 @@ export default class DayScreen extends React.Component {
                         source={require('../../assets/images/icon_count.png')}
                         />
 
-                    <Text style={styles.timeText}>20 {myLanguage.translate('exercise')}</Text>
+                    <Text style={styles.timeText}>{this.state.exercise_count + " " + myLanguage.translate('exercise')}</Text>
                   </View>
                   <View style={{flex:1,  flexDirection:'row', justifyContent:'flex-end', alignItems:'center'}}>
                     <Image
@@ -189,7 +232,7 @@ export default class DayScreen extends React.Component {
                       }}
                       source={require('../../assets/images/icon_time.png')}
                       />
-                    <Text style={styles.timeText}>14 {myLanguage.translate('min')}</Text>
+                    <Text style={styles.timeText}>{this.state.exercise_duration + " " + myLanguage.translate('min')}</Text>
                   </View>
               </View>
 
@@ -228,6 +271,7 @@ export default class DayScreen extends React.Component {
 
           <DescriptionModal
              isShowDescriptionModal = {this.state.isShowDescriptionModal}
+             modalItem = {this.state.modalItem}
              onPressDismissModal = {this.onPressDismissModal}
            >
            </DescriptionModal>

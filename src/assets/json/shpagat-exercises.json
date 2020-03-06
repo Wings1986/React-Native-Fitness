@@ -1,0 +1,164 @@
+{
+    "Exercise_1": {
+        "Exercise": 1,
+        "Description": "Ноги на ширине плеч, стараемся руками достать до пола",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_2": {
+        "Exercise": 2,
+        "Description": "Поворот к правой (левой) ноге, максимально тянемся к ноге",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_3": {
+        "Exercise": 3,
+        "Description": "Ноги шире плеч, сгибаем руки в локтях и тянем локти к полу",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_4": {
+        "Exercise": 4,
+        "Description": "Ноги шире плеч, разворачиваемся к правой (левой) ноге",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_5": {
+        "Exercise": 5,
+        "Description": "Ноги шире плеч, разворот к правой (левой) ноге, тянем стопу на себя",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_6": {
+        "Exercise": 6,
+        "Description": "Ноги стоят на ширине плеч, опускаемся вниз, руками касаемся пола, уходим вперед в  планку и делаем большой шаг правой (левой) ноги, поднимаем корпус, руки ставим на бедра и дотягиваем вниз",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_7": {
+        "Exercise": 7,
+        "Description": "из положения 6 локти ставим на пол к согнутой ноге",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_8": {
+        "Exercise": 8,
+        "Description": "Выпрямляем руки и сгибаем левую (правую) ногу, пытаемся пяткой лостать до ягодиц",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_9": {
+        "Exercise": 9,
+        "Description": "Садимся на пол, ноги вместе, тянемся к носку руками, максимальный наклон вниз, стопы максимально на себя",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_10": {
+        "Exercise": 10,
+        "Description": "Ноги врозь, корпус опускаем к полу, стараемся максимально дальше уйти вперед руками",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_11": {
+        "Exercise": 11,
+        "Description": "Поднимаемся, разворачиваемся к правой (левой) ноге, беремся за голень, тянемся корпусом к ноге",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_12": {
+        "Exercise": 12,
+        "Description": "Поднимаем корпус и делаем боковой наклон к ноге",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_13": {
+        "Exercise": 13,
+        "Description": "Ложимся на спину, ноги прямые, левую (правую) ногу сгибаем в колене, тянем максимально к груди",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_14": {
+        "Exercise": 14,
+        "Description": "Лежа на спине, ноги прямые, левую (правую) ногу поднимаем прямой и тянем максимально к плечу, выпрямляем правую ногу",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_15": {
+        "Exercise": 15,
+        "Description": "Стоим на коленях, раздвигаем ноги к полу, опускаемся на локти",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_16": {
+        "Exercise": 16,
+        "Description": "Стоим на коленях, раздвигаем ноги к полу, одна нога согнута, другая выпрямлена",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_17": {
+        "Exercise": 17,
+        "Description": "Подходим к стене, поворачиваемся спиной, ноги максимально широко",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_18": {
+        "Exercise": 18,
+        "Description": "Выставляем левую (правую) ногу вперед, правая (левая) нога на колене, стараемся коснуться носом левой (правой) ноги",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_19": {
+        "Exercise": 19,
+        "Description": "Выравниваемся и опускаемся на шпагат максимально",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_20": {
+        "Exercise": 20,
+        "Description": "Бег, колени вверх",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_21": {
+        "Exercise": 21,
+        "Description": "Прыжки",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_22": {
+        "Exercise": 22,
+        "Description": "Захлест голени",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_23": {
+        "Exercise": 23,
+        "Description": "Растяжка четырехлавой мышцы у стены правая (левая) нога",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_24": {
+        "Exercise": 24,
+        "Description": "Растяжка \"кобра\"",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_25": {
+        "Exercise": 25,
+        "Description": "Растяжка выпадом влево (вправо)",
+        "Duration": 15,
+        "Image": "placeholder.png"
+    },
+    "Exercise_26": {
+        "Exercise": 26,
+        "Description": "Приседы",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    },
+    "Exercise_27": {
+        "Exercise": 27,
+        "Description": "Ноги на ширине плеч, ладони на полу",
+        "Duration": 30,
+        "Image": "placeholder.png"
+    }
+}

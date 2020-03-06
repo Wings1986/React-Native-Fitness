@@ -64,12 +64,19 @@ export default class ExerciseScreen extends React.Component {
     this.state = {
 
         isShowModal: false,
-        active: 0,
+        
+        curActive : 0,
+
+
+
         progressStatus : 0,
         currentTime : 0,
         currentActionImg : require('../../assets/images/image_1.png'),
     };
     let platform = Platform.OS;
+
+    this.exercises = this.props.navigation.getParam('exercises', []);
+
     this.onDismissModalByStop = this.onDismissModalByStop.bind(this);
     this.onDismissModalByCancel = this.onDismissModalByCancel.bind(this);
 
@@ -79,15 +86,54 @@ export default class ExerciseScreen extends React.Component {
   }
 
   componentDidMount() {
-     this.updateCurrentStatus(); 
+    
+    this.gotoExercise(0);
+    
   }
 
+  gotoExercise(step) {
+
+    this.setState({
+      curActive: step,
+      progressStatus : 0,
+      currentTime : 0
+    }, () => {
+
+
+    });
+
+    if(this.timer != null) {
+      clearInterval(this.timer);
+    }
+    
+    this.timer = null;
+    this.timeDuration = this.exercises[step].Duration;
+    this.progressStep = 1 / this.timeDuration;
+
+    this.updateCurrentStatus(); 
+
+    
+  }
+
+
   updateCurrentStatus(){
+
+    console.log("curActive = " + this.state.curActive);
+    console.log("progressStatus = " + this.state.progressStatus);
+    console.log("currentTime = " + this.state.currentTime);
+
     this.timer = setInterval(() => {
       this.setState({progressStatus : this.state.progressStatus + this.progressStep});
       if (this.state.progressStatus + this.progressStep >= 1){
-        this.setState({progressStatus : 0});
-        this.props.navigation.navigate('DayCompleteScreen')
+        //this.setState({progressStatus : 0});
+
+        if (this.state.curActive < this.exercises.length-1) {
+          this.gotoExercise(this.state.curActive + 1)
+        }
+        else {
+          this.props.navigation.navigate('DayCompleteScreen')
+        }
+        
         return;
       }
 
@@ -186,7 +232,7 @@ export default class ExerciseScreen extends React.Component {
                     </Button>
                 </Left>
                 <Body style={{flex: 3, alignItems: 'center'}}>
-                <Title style={{color:'white'}}> 5 / 21 </Title>
+                    <Title style={{color:'white'}}> {this.state.curActive+1 + " / " + this.exercises.length} </Title>
                 </Body>
                 <Right style={{flex: 1}}>
                 </Right>
@@ -201,7 +247,7 @@ export default class ExerciseScreen extends React.Component {
                         justifyContent:'center',
                         marginTop:5,
                     }}>
-                    <Dots length={25}  active={this.state.active} 
+                    <Dots length={this.exercises.length}  active={this.state.curActive} 
                           activeColor='#FFFFFF' passiveColor='#FFFFFF88'
                           activeDotWidth={10} activeDotHeight={10}
                           passiveDotWidth={8} passiveDotHeight={8}/>
