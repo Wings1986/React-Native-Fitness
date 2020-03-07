@@ -67,8 +67,6 @@ export default class ExerciseScreen extends React.Component {
         
         curActive : 0,
 
-
-
         progressStatus : 0,
         currentTime : 0,
         currentActionImg : require('../../assets/images/image_1.png'),
@@ -96,7 +94,7 @@ export default class ExerciseScreen extends React.Component {
     this.setState({
       curActive: step,
       progressStatus : 0,
-      currentTime : 0
+      currentTime : this.exercises[step].Duration // 0
     }, () => {
 
 
@@ -137,7 +135,7 @@ export default class ExerciseScreen extends React.Component {
         return;
       }
 
-      this.setState({currentTime : this.state.currentTime + 1});
+      this.setState({currentTime : this.state.currentTime - 1});
 
       let currentActionImg;
       let value = Math.floor(this.state.currentTime / 2) % 5;

@@ -188,7 +188,7 @@ export default class DayScreen extends React.Component {
               <Left style={{flex: 1}}>
               </Left>
               <Body style={{flex: 3, alignItems: 'center'}}>
-              <Title style={globalStyle.headerTitle}>{myLanguage.translate('day') + " " + this.currentDay}</Title>
+              <Title style={globalStyle.headerTitle}>{myLanguage.translate('day') + " " + (this.currentDay+1)}</Title>
               </Body>
               <Right style={{flex: 1}}>
               </Right>
