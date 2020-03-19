@@ -11,6 +11,7 @@ import { Ionicons } from '@expo/vector-icons';
 import DayScreen from './src/screens/DayScreen';
 import ExerciseScreen from './src/screens/ExerciseScreen';
 import DayCompleteScreen from './src/screens/DayCompleteScreen'
+import ReportScreen from './src/screens/ReportScreen'
 
 import * as myLanguage from  './src/translations';
 
@@ -41,13 +42,13 @@ const AppNavigator = createStackNavigator({
     }),
   },
 
-  // DescriptionScreen: {
-  //   screen: DescriptionScreen,
-  //   navigationOptions: () => ({
-  //     headerBackTitle: null,
-  //     headerShown: false,
-  //   }),
-  // },
+  ReportScreen: {
+    screen: ReportScreen,
+    navigationOptions: () => ({
+      headerBackTitle: null,
+      headerShown: false,
+    }),
+  },
 });
 
 const HomeNavigation = createAppContainer(AppNavigator);

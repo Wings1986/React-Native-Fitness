@@ -3,6 +3,8 @@
     "day": "Day",
     "sec" : "sec",
     "min" : "min",
+    "short_sec" : "sec",
+    "short_min" : "min",
     "kcal" : "kcal",
 
     "exercise_title": "Running knees up",
@@ -19,4 +21,8 @@
     "train_time" : "Training time",
     "spend_today" : "Spent today",
     
+    "report" : "Report",
+    "Total_workouts" : "Total workouts",
+    "Total_training_time":"Total training time",
+    "Spent_all_cal":"Spent all calories"
 }

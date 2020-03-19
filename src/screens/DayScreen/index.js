@@ -127,6 +127,11 @@ export default class DayScreen extends React.Component {
       }) 
   }
 
+  onPressMore(){
+
+    this.props.navigation.navigate('ReportScreen') 
+}
+
   renderFeedItem(item, index) {
     /* Component for Comment */
     return (
@@ -261,11 +266,17 @@ export default class DayScreen extends React.Component {
                         style={styles.footerImageView}>
                      </Image>
                 </TouchableOpacity>
-                <Image
-                    source={require('../../assets/images/more.png')}
-                    style={{width:30, height:30, position:'absolute', right:50, alignItems:'center',alignSelf:
-                    'center'}}>
-                </Image>
+
+                <TouchableOpacity 
+                    style={{justifyContent:'center', flexDirection:'row'}}
+                    onPress={()=>this.onPressMore()}
+                    >
+                    <Image
+                        source={require('../../assets/images/more.png')}
+                        style={{width:30, height:30, position:'absolute', right:50, alignItems:'center',alignSelf:
+                        'center'}}>
+                    </Image>
+                </TouchableOpacity>
           </Footer>
 
 

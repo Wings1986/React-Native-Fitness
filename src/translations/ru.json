@@ -4,6 +4,8 @@
     "sec" : "секунд",
     "min" : "минут",
     "kcal" : "ккал",
+    "short_sec" : "сек",
+    "short_min" : "мин",
 
     "exercise_title": "Бег, колени вверх",
     
@@ -19,4 +21,8 @@
     "train_time" : "Время тренировки",
     "spend_today" : "Потрачено сегодня",
     
+    "report" : "Отчет",
+    "Total_workouts" : "Всего тренировок",
+    "Total_training_time":"Общее время тренировок",
+    "Spent_all_cal":"Потрачено за все время"
 }

@@ -125,11 +125,11 @@ export default class ExerciseScreen extends React.Component {
       if (this.state.progressStatus + this.progressStep >= 1){
         //this.setState({progressStatus : 0});
 
-        if (this.state.curActive < this.exercises.length-1) {
+        if (this.state.curActive < this.exercises.length - 1) {
           this.gotoExercise(this.state.curActive + 1)
         }
         else {
-          this.props.navigation.navigate('DayCompleteScreen')
+          this.gotoComplete();
         }
         
         return;
@@ -166,7 +166,13 @@ export default class ExerciseScreen extends React.Component {
   
   onDismissModalByStop(){
     this.setState({isShowModal : false});
+    clearInterval(this.timer);
     this.props.navigation.goBack();
+  }
+
+  gotoComplete() {
+    clearInterval(this.timer);
+    this.props.navigation.navigate('DayCompleteScreen')
   }
 
   onDismissModalByCancel(){

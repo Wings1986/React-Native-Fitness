@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Localization from 'expo-localization';
+//import * as Localization from 'expo-localization';
 import i18n from 'i18n-js';
 import memoize from 'lodash.memoize'; // Use for caching/memoize for better performance
 

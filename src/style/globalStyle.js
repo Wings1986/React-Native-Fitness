@@ -9,9 +9,10 @@ export default StyleSheet.create({
   },
   
   headerContainer: {
-    borderBottomWidth: 0,
+    // borderBottomWidth: 0,
     width: '100%',
     backgroundColor:'#55D3CB00',
+
   },
   headerTitle: {
     color: 'white',
